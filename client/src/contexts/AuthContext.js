@@ -8,8 +8,8 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-  const [currentUser, setCurrentUser] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [currentUser, setCurrentUser] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   async function login(email, password) {
     try {
@@ -20,15 +20,25 @@ export function AuthProvider({ children }) {
     }
   }
 
+    async function logout() {
+      return auth.signOut();
+    }
+
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
-      setCurrentUser(user)
+      if(!user) {
+        setCurrentUser(null)
+      } else {
+        setCurrentUser(true)
+      }
+      setLoading(false)
     })
   }, [])
 
   const value = {
     currentUser,
-    login
+    login,
+    logout
   }
 
   return (

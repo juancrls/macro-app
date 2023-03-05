@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export function useFetch(url) {
+export function useFetch(url, params, headers) {
   const [data, setData] = useState([]);
   const [isFetching, setIsFetching] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    axios.get(url)
+    axios.get(url, { params: { ...params } })
       .then(response => {
         setData(response.data);
       })

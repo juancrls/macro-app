@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import Form from '../Components/Form/Form'
-import TextArea from '../Components/TextArea/TextArea'
-import Button from '../Components/Button/Button'
+import React, { useState } from 'react'
+import Form from '../components/Form/Form'
+import TextArea from '../components/TextArea/TextArea'
+import Button from '../components/Button/Button'
 import { useAuth } from '../contexts/AuthContext'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
+  const navigate = useNavigate();
+
   const { login } = useAuth();
 
   const [loading, setLoading] = useState(false);
@@ -23,6 +26,8 @@ export default function Login() {
     if(res && res.error) {
       let errorMessage = res.error
       console.log(errorMessage)
+    } else {
+      navigate("/dashboard")
     }
 
     setLoading(false);
@@ -66,6 +71,7 @@ export default function Login() {
         type="submit"
         content="Sign In"
         className="form-button"
+        disabled={loading}
       />
     </>
   )
