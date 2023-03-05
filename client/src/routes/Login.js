@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import Form from '../components/Form/Form'
-import TextArea from '../components/TextArea/TextArea'
-import Button from '../components/Button/Button'
-import { useAuth } from '../contexts/AuthContext'
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from 'react';
+import Form from '../components/Form/Form.js';
+import TextArea from '../components/TextArea/TextArea.js';
+import Button from '../components/Button/Button';
+import { useAuth } from '../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const navigate = useNavigate();
