@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "feather-icons": "^4.29.0",
+    "html-react-parser": "^3.0.11"
+  }
+}

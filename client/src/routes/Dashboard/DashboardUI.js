@@ -2,7 +2,6 @@ import React from "react";
 import Button from "../../components/Button/Button";
 import Header from "../../components/Header/Header";
 import "./Dashboard.scss";
-import { ReactComponent as Logo } from "../../assets/logo.svg";
 import NutritionalFactsCard from "../../components/Cards/NutritionalFactsCard/NutritionalFactsCard";
 
 export default function DashboardUI({ data, logout }) {
