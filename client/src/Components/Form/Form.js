@@ -9,7 +9,8 @@ export default function Form(props) {
     <form
       noValidate
       onSubmit={onSubmit}
-      className="form"
+      theme={props.theme}
+      className={`form ${props.theme ? "form_" + props.theme : ""}`}
       id={id}
     >
       {globalError && 

@@ -20,7 +20,6 @@ export default function LoginUI({ handleSubmit, handleChange, loading, states, g
           id="login-form"
         >
           <TextArea
-
             onChange={handleChange}
             id="login_email_input"
             type={states.login_email_input.type}

@@ -1,7 +1,23 @@
 
 .button {
-  &_full {
+  cursor:pointer;
+
+  &_full-width {
     width: 100%;
+  }
+
+  &_s {
+    width: 64px;
+  }
+
+  &_query-button {
+    height: 2rem;
+    border: 2px solid black;
+    // color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: #d3d3d3d0;
   }
 
   &_auth-button {
@@ -16,6 +32,12 @@
     border-radius: 1rem;
   
     height: 4rem;
+  }
+
+  &_show-hide-button {
+    border: 1px solid black;
+    height: 2rem;
+    cursor: pointer;
   }
 
   &:hover {

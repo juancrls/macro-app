@@ -3,6 +3,23 @@ html, body {
 }
 
 .dashboard {
-  overflow: hidden;
-  color: #000000;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.days {
+  width: 60%;
+  height: 100%;
+  // background-color: red;
+}
+
+.total-calories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+  background-color: #3b414e;
 }

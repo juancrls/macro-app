@@ -20,6 +20,15 @@
   width: 100%;
   font-size: 1.2rem;
 
+  &_simple {
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+
   &_auth-form {
     display: flex;
     justify-content: center;
@@ -55,7 +64,6 @@
 
 .icon {
   position: absolute;
-  left: 10px;
   display: flex;
   align-items: center;
   height: 100%;

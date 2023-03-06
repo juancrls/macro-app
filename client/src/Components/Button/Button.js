@@ -7,7 +7,7 @@ export default function Button(props) {
     <button
       form={props.form}
       type={props.type}
-      className={`button button_${props.theme} button_${props.size == "full-width" ? "full" : ""} ${props.iconLeft ? "pl-50" : ""} ${props.iconRight ? "pr-50" : ""}`}
+      className={`button button_${props.theme} button_${props.size ? props.size : ""} ${props.iconLeft ? "pl-50" : ""} ${props.iconRight ? "pr-50" : ""}`}
       disabled={props.disabled ? props.disabled : null}
       onClick={props.onClick}
     >

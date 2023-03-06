@@ -1,0 +1,51 @@
+.card {
+  width: 350px;
+  height: 230px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  
+  color: black;
+  background-color: #ffffff;
+  margin: 1rem;
+  padding: 1rem;
+  // border-radius: 2.2rem;
+
+  text-transform: capitalize;
+  box-shadow: 0px 7px 32px rgb(0 0 0 / 20%);
+
+  &_hidden {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  &_reduced-info {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &_big {
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    background: none;
+    padding-top: 3rem;
+  }
+}
+
+.total-calories-span {
+  width: 325px;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 3rem;
+}
