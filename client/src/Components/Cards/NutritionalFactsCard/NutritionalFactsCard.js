@@ -31,10 +31,6 @@ export default function NutritionalFacts(props) {
                 <strong>Fiber: </strong>
                 <span>{food.fiber_g}g</span>
               </li>
-              <li className="nutritional-facts-potassium">
-                <strong>Potassium: </strong>
-                <span>{food.potassium_mg}mg</span>
-              </li>
               <li className="nutritional-facts-protein">
                 <strong>Protein: </strong>
                 <span>{food.protein_g}g</span>
@@ -47,7 +43,7 @@ export default function NutritionalFacts(props) {
                 <strong>Sugar: </strong>
                 <span>{food.sugar_g}g</span>
               </li>
-              <li className="nutricional-facts-cholesterol">
+              <li className="nutritional-facts-cholesterol">
                 <strong>Cholesterol: </strong>
                 <span>{food.cholesterol_mg}mg</span>
               </li>
