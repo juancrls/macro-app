@@ -7,8 +7,8 @@ import CaloriesCard from "../../components/Cards/CaloriesCard/CaloriesCard";
 import Form from '../../components/Form/Form.js';
 import TextArea from '../../components/TextArea/TextArea.js';
 
-export default function DashboardUI({ data, logout }) {
-  const { foodNutritionalData=[], error, handleSubmit, handleChange } = data;
+export default function DashboardUI({ foodNutritionalData, error, logout, handleSubmit, handleChange }) {
+  console.log("food nutr", foodNutritionalData)
 
   return (
     <>
