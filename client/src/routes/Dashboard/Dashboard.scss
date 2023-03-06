@@ -7,19 +7,32 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-height: 100%;
 }
 
 .days {
+  display: flex;
+  flex-direction: column;
   width: 60%;
   height: 100%;
-  // background-color: red;
+  max-height: 100%;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 170%;
 }
 
 .total-calories {
+  position: fixed;
+  right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 40%;
-  height: 100%;
+  height: 101%;
   background-color: #3b414e;
 }

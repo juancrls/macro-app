@@ -2,13 +2,13 @@ import React from "react";
 import DoughnutChart from "../../Charts/DoughnutChart/DoughnutChart";
 import Button from "../../Button/Button";
 
-export default function CaloriesCard() {
+export default function CaloriesCard({labelArray, dataArray}) {
   const data = {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    labels: labelArray,
     datasets: [
       {
-        label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3],
+        label: "Quantity in grams (g)",
+        data: dataArray,
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",

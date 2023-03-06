@@ -28,43 +28,43 @@ export default function NutritionalFacts(props) {
       {
         label: "Carbohydrates",
         data: [carbohydrates_total_g],
-        backgroundColor: "red",
-        borderColor: "black",
+        backgroundColor: "rgba(255, 99, 132, 0.2)",
+        borderColor: "rgba(255, 99, 132, 1)",
         borderWidth: 1,
       },
       {
         label: "Saturated Fat",
         data: [fat_saturated_g],
-        backgroundColor: "orange",
-        borderColor: "black",
+        backgroundColor: "rgba(54, 162, 235, 0.2)",
+        borderColor: "rgba(54, 162, 235, 1)",
         borderWidth: 1,
       },
       {
         label: "Total Fat",
         data: [fat_total_g],
-        backgroundColor: "yellow",
-        borderColor: "black",
+        backgroundColor: "rgba(255, 206, 86, 0.2)",
+        borderColor: "rgba(255, 206, 86, 1)",
         borderWidth: 1,
       },
       {
         label: "Fiber",
         data: [fiber_g],
-        backgroundColor: "lime",
-        borderColor: "black",
+        backgroundColor: "rgba(75, 192, 192, 0.2)",
+        borderColor: "rgba(75, 192, 192, 1)",
         borderWidth: 1,
       },
       {
         label: "Protein",
         data: [protein_g],
-        backgroundColor: "purple",
-        borderColor: "black",
+        backgroundColor: "rgba(153, 102, 255, 0.2)",
+        borderColor: "rgba(153, 102, 255, 1)",
         borderWidth: 1,
       },
       {
         label: "Sugar",
         data: [sugar_g],
-        backgroundColor: "pink",
-        borderColor: "black",
+        backgroundColor: "rgba(255, 159, 64, 0.2)",
+        borderColor: "rgba(255, 159, 64, 1)",
         borderWidth: 1,
       },
     ],
@@ -75,12 +75,22 @@ export default function NutritionalFacts(props) {
         <div className={`card ${!showContent ? "card_hidden" : ""}`}>
           {showContent && <ColumnBarChart chartData={data} options={options} />}
           {!showContent && <span className="card_reduced-info">{name} | {calories} calories</span>}
+
+          <div className="card_button-container">
+            <Button
+              onClick={toggleContent}
+              content={showContent ? "HIDE" : "SHOW"}
+              size="s"
+              theme="show-hide-button"
+            />
+            
           <Button
             onClick={toggleContent}
-            content={showContent ? "HIDE" : "SHOW"}
-            size="s"
-            theme="show-hide-button"
+            content={"REMOVE"}
+            theme="remove-button"
           />
+          </div>
+
         </div>
     </>
   );

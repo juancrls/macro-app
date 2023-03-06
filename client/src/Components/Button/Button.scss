@@ -40,6 +40,13 @@
     cursor: pointer;
   }
 
+  &_remove-button {
+    border: 1px solid red;
+    color: red;
+    height: 2rem;
+    cursor: pointer;
+  }
+
   &:hover {
     background-color: #d3d3d3;
   }

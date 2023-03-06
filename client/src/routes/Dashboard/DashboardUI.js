@@ -4,27 +4,42 @@ import Header from "../../components/Header/Header";
 import "./Dashboard.scss";
 import NutritionalFactsCard from "../../components/Cards/NutritionalFactsCard/NutritionalFactsCard";
 import CaloriesCard from "../../components/Cards/CaloriesCard/CaloriesCard";
-import Form from '../../components/Form/Form.js';
-import TextArea from '../../components/TextArea/TextArea.js';
+import Form from "../../components/Form/Form.js";
+import TextArea from "../../components/TextArea/TextArea.js";
+import { processNutritionData } from "../../utils/processNutritionData";
 
-export default function DashboardUI({ foodNutritionalData, error, logout, handleSubmit, handleChange }) {
-  console.log("food nutr", foodNutritionalData)
+export default function DashboardUI({
+  foodNutritionalData,
+  error,
+  logout,
+  handleSubmit,
+  handleChange,
+}) {
+  console.log("food nutr", foodNutritionalData);
+
+  const [labelArray, dataArray] = processNutritionData(foodNutritionalData);
+  // const labelArray = processNutritionData(foodNutritionalData)[0]
+  // const dataArray = processNutritionData(foodNutritionalData)[1]
 
   return (
     <>
-      <Header />
       <div className="dashboard">
-        <section className="days">
-          {/* <Button content="Logout" onClick={logout} /> */}
-          {/* {isFetching && <p>Carregando...</p>} */}
+        <div className="days">
+          <Header />
+          <section className="card-container">
+            {/* <Button content="Logout" onClick={logout} /> */}
+            {/* {isFetching && <p>Carregando...</p>} */}
 
-          {Object.values(foodNutritionalData).map((food) => {
-            return <NutritionalFactsCard {...food} />
-          })}
-        </section>
+            {Object.values(foodNutritionalData).map((food) => {
+              return (
+                <NutritionalFactsCard {...food} data={foodNutritionalData} />
+              );
+            })}
+          </section>
+        </div>
         <section className="total-calories">
           <Form onSubmit={handleSubmit} theme="simple" id="query-form">
-            <TextArea 
+            <TextArea
               onChange={handleChange}
               id="food-search-input"
               // type={states.login_email_input.type}
@@ -32,7 +47,7 @@ export default function DashboardUI({ foodNutritionalData, error, logout, handle
               // errorMsg={states.login_email_input.errorMsg}
               size="full-width"
               theme="simple"
-              iconRight={{name: "search", width: 24, height: 24 }}
+              iconRight={{ name: "search", width: 24, height: 24 }}
               placeholder="Type some food information"
             />
             <Button
@@ -43,7 +58,7 @@ export default function DashboardUI({ foodNutritionalData, error, logout, handle
               theme="query-button"
             />
           </Form>
-          <CaloriesCard />
+          <CaloriesCard labelArray={labelArray} dataArray={dataArray} />
         </section>
       </div>
     </>
