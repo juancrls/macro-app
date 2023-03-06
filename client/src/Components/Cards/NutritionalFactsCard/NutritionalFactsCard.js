@@ -24,7 +24,6 @@ export default function NutritionalFacts(props) {
     fiber_g,
     protein_g,
     sugar_g,
-    id
   } = props;
 
   // console.log("DATA ON NUTRI", props.data)

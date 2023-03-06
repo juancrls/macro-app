@@ -1,8 +1,7 @@
 import React from "react";
 import DoughnutChart from "../../Charts/DoughnutChart/DoughnutChart";
-import Button from "../../Button/Button";
 
-export default function CaloriesCard({labelArray, dataArray}) {
+export default function CaloriesCard({labelArray, dataArray, totalCalories}) {
   const data = {
     labels: labelArray,
     datasets: [
@@ -31,7 +30,6 @@ export default function CaloriesCard({labelArray, dataArray}) {
     ],
   };
 
-  console.log("data", dataArray)
   return (
     <>
       <div className={`card card_big`}>
@@ -42,7 +40,7 @@ export default function CaloriesCard({labelArray, dataArray}) {
           </div>
         ) : (
           <>
-            <span className="total-calories-span">TOTAL CALORIES OF THE DAY</span>
+            <span className="total-calories-span">TOTAL CALORIES OF THE DAY: {totalCalories ? totalCalories : 0} KCAL</span>
             <DoughnutChart chartData={data} />
           </>
         )}

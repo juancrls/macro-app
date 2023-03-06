@@ -28,15 +28,18 @@ export function processNutritionData(objectsArray) {
     "fat_total_g": 0
   };
 
+  let totalCalories = 0;
+
   if(objectsArray.length < 1) {
-    sums = {}
+    return [labelArray, [], 0];
   }
 
   // Iterate through each object in the array and add its property values to the sums object
-
   objectsArray.forEach((object) => {
     Object.keys(object).forEach((key) => {
-      if (requiredData.includes(key)) {
+      if (key === 'calories') {
+        totalCalories += object[key];
+      } else if (requiredData.includes(key)) {
         sums[key] += object[key];
       }
     });
@@ -48,5 +51,5 @@ export function processNutritionData(objectsArray) {
     dataArray.push(sums[key]);
   });
 
-  return [labelArray, dataArray];
+  return [labelArray, dataArray, totalCalories.toFixed(2)];
 }

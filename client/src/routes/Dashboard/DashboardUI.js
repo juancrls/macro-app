@@ -18,7 +18,7 @@ export default function DashboardUI({
   handleChange,
   removeObj,
 }) {
-  const [labelArray, dataArray] = processNutritionData(foodNutritionalData);
+  const [labelArray, dataArray, totalCalories] = processNutritionData(foodNutritionalData);
 
   return (
     <>
@@ -70,7 +70,7 @@ export default function DashboardUI({
               theme="query-button"
             />
           </Form>
-          <CaloriesCard labelArray={labelArray} dataArray={dataArray} />
+          <CaloriesCard labelArray={labelArray} dataArray={dataArray} totalCalories={totalCalories}/>
         </section>
       </div>
     </>

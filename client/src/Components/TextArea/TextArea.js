@@ -13,7 +13,7 @@ export default function TextArea(props) {
         <input
           onChange={onChange}
           id={id}
-          type={type}
+          type={type == "password-confirmation" ? "password" : type}
           value={value}
           className={`input input_${theme} ${
             errorMsg || globalError ? "input_error" : ""

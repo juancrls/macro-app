@@ -26,7 +26,7 @@ export default function Dashboard() {
         const newData = [...data, ...response.data]; // Merge the new data with the existing data
         
         if(newData.length > 10) { // Limit the array to have only 10 foods
-          newData.length = 10;
+          newData.length = 8;
         
         }
         setData(newData);

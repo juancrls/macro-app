@@ -20,6 +20,15 @@ export function AuthProvider({ children }) {
     }
   }
 
+  async function signup(email, password) {
+    try {
+      let res = await auth.createUserWithEmailAndPassword(email, password)
+      return res
+    } catch(err) {
+      throw err.code
+    }
+  }
+
     async function logout() {
       return auth.signOut();
     }
@@ -38,6 +47,7 @@ export function AuthProvider({ children }) {
   const value = {
     currentUser,
     login,
+    signup,
     logout
   }
 
