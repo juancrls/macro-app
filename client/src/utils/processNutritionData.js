@@ -19,15 +19,24 @@ export function processNutritionData(objectsArray) {
   ];
 
   // Create an object to store the sums of each property
-  const sums = {};
+  let sums = {
+    "carbohydrates_total_g": 0,
+    "sugar_g": 0,
+    "fiber_g": 0,
+    "protein_g": 0,
+    "fat_satured_g": 0,
+    "fat_total_g": 0
+  };
+
+  if(objectsArray.length < 1) {
+    sums = {}
+  }
 
   // Iterate through each object in the array and add its property values to the sums object
+
   objectsArray.forEach((object) => {
     Object.keys(object).forEach((key) => {
       if (requiredData.includes(key)) {
-        if (!sums.hasOwnProperty(key)) {
-          sums[key] = 0;
-        }
         sums[key] += object[key];
       }
     });

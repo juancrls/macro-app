@@ -12,7 +12,6 @@ export default function NutritionalFacts(props) {
 
   const removeObj = (ind) => {
     props.removeObj(ind);
-    console.log("REMOVED ID", id)
   }
 
   

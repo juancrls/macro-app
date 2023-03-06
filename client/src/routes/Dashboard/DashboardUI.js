@@ -33,9 +33,9 @@ export default function DashboardUI({
               <Skeleton />
             ) : (
               foodNutritionalData.length > 0 ? (
-                Object.values(foodNutritionalData).map((food) => {
+                Object.values(foodNutritionalData).map((food, index) => {
                   return (
-                    <NutritionalFactsCard {...food} data={foodNutritionalData} removeObj={removeObj} />
+                    <NutritionalFactsCard {...food} data={foodNutritionalData} removeObj={removeObj} key={index}/>
                   );
                 })
               ) : (
