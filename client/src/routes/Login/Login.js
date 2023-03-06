@@ -1,44 +1,75 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LoginData from './LoginData';
 import LoginUI from './LoginUI';
 import { useNavigate } from 'react-router-dom';
+import { sleep } from '../../utils/sleep';
+import { hasError } from '../../utils/hasError';
+import InputValidation from '../../components/TextArea/InputValidation';
+import { getErrorMessage } from '../../utils/firebaseErrorHandlers';
 
 export default function Login() {
   const { login } = LoginData();
+  const { validateInputs } = InputValidation();
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [globalError, setGlobalError] = useState("")
+
+  const [states, setStates] = useState({
+		"login_email_input": { value: '', errorMsg: '', type: 'email'},
+		"login_password_input": { value: '', errorMsg: '', type: 'password'},
+	});
+
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setLoading(true);
+    const { validationResult } = validateInputs(states);
+    setGlobalError(null);
 
-    try {
-      await login(email, password);
-      navigate("/dashboard");
-    } catch (error) {
-      console.error(error);
+    if(hasError(validationResult)) {
+      for(let stateId in validationResult) {
+        setStates((prev) => ({
+          ...prev,
+          [stateId]: {
+            ...prev[stateId],
+            errorMsg: validationResult[stateId].errorMsg
+          },
+        }));
+      }
+      return;
+    } else {
+      setLoading(true);
+      try {
+        const res = await login(states.login_email_input.value, states.login_password_input.value);
+        navigate("/dashboard");
+        console.log(res)
+      } catch (error) {
+        setGlobalError(getErrorMessage(error));
+      }
+      setLoading(false);
     }
-
-    setLoading(false);
   }
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  }
+  const handleChange = (event) => {
+    let stateId = event.target.id;
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
+    setStates((prev) => ({
+			...prev,
+			[stateId]: {
+        // ...prev[stateId],
+				value: event.target.value,
+				type: event.target.type,
+			},
+		}));
   }
 
   return (
     <LoginUI
       handleSubmit={handleSubmit}
-      handleEmailChange={handleEmailChange}
-      handlePasswordChange={handlePasswordChange}
+      handleChange={handleChange}
       loading={loading}
+      states={states}
+      globalError={globalError}
     />
   );
 }

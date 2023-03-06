@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as Logo } from "../../assets/logo-nobg.svg";
+import { ReactComponent as Logo } from "../../assets/svg/logo-nobg.svg";
 import "./Header.scss";
 
 export default function Header() {

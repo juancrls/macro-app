@@ -11,7 +11,7 @@ export default function Button(props) {
       disabled={props.disabled ? props.disabled : null}
       onClick={props.onClick}
     >
-      <span>{props.content}</span>
+      <span className='button_content'>{props.content}</span>
     </button>
   )
 }

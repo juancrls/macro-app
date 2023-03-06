@@ -16,7 +16,7 @@ export function AuthProvider({ children }) {
       let res = await auth.signInWithEmailAndPassword(email, password)
       return res
     } catch(err) {
-      return err
+      throw err.code
     }
   }
 
