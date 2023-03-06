@@ -24,6 +24,11 @@ export default function Dashboard() {
       .then((response) => {
         console.log("DATA REQUEST OK | RESPONSE:", response.data);
         const newData = [...data, ...response.data]; // Merge the new data with the existing data
+        
+        if(newData.length > 10) { // Limit the array to have only 10 foods
+          newData.length = 10;
+        
+        }
         setData(newData);
       })
       .catch((err) => {

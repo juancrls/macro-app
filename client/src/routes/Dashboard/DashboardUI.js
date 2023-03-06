@@ -7,6 +7,7 @@ import CaloriesCard from "../../components/Cards/CaloriesCard/CaloriesCard";
 import Form from "../../components/Form/Form.js";
 import TextArea from "../../components/TextArea/TextArea.js";
 import { processNutritionData } from "../../utils/processNutritionData";
+import Skeleton from "../../components/LoadingIndicators/Skeleton/Skeleton";
 
 export default function DashboardUI({
   foodNutritionalData,
@@ -29,7 +30,7 @@ export default function DashboardUI({
             {/* {isFetching && <p>Carregando...</p>} */}
 
             {isFetching ? (
-              <p>CARREGANDO</p>
+              <Skeleton />
             ) : (
               foodNutritionalData.length > 0 ? (
                 Object.values(foodNutritionalData).map((food) => {
