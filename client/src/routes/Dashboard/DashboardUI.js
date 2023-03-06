@@ -10,6 +10,7 @@ import { processNutritionData } from "../../utils/processNutritionData";
 
 export default function DashboardUI({
   foodNutritionalData,
+  isFetching,
   error,
   logout,
   handleSubmit,
@@ -27,11 +28,24 @@ export default function DashboardUI({
             {/* <Button content="Logout" onClick={logout} /> */}
             {/* {isFetching && <p>Carregando...</p>} */}
 
-            {Object.values(foodNutritionalData).map((food) => {
-              return (
-                <NutritionalFactsCard {...food} data={foodNutritionalData} removeObj={removeObj} />
-              );
-            })}
+            {isFetching ? (
+              <p>CARREGANDO</p>
+            ) : (
+              foodNutritionalData.length > 0 ? (
+                Object.values(foodNutritionalData).map((food) => {
+                  return (
+                    <NutritionalFactsCard {...food} data={foodNutritionalData} removeObj={removeObj} />
+                  );
+                })
+              ) : (
+                <div className="days-section-span">
+                  <span>
+                    Your food information will appear right here
+                  </span>
+                </div>
+              )
+            )}
+
           </section>
         </div>
         <section className="total-calories">

@@ -1,5 +1,5 @@
 .card {
-	@media screen and (min-width: 1200px) {
+	@media screen and (min-width: 1330px) {
 		width: 26vw;
     height: 25vh;
 	}
@@ -53,10 +53,33 @@
   }
 }
 
-.total-calories-span {
+.instruction-span, .total-calories-span {
   width: 325px;
   color: white;
   font-size: 1.5rem;
   text-align: center;
   line-height: 3rem;
+}
+
+.example-span {
+  color: #d3d3d3;
+  letter-spacing: 0.6px;
+}
+
+.instructions-container {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.days-section-span {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #89826a;
+  font-size: 2rem;
 }

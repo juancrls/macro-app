@@ -11,7 +11,7 @@ export default function Dashboard() {
     const persistedData = localStorage.getItem("data");
     return persistedData ? JSON.parse(persistedData) : [];
   });
-  const [isFetching, setIsFetching] = useState(true);
+  const [isFetching, setIsFetching] = useState(false);
   const [error, setError] = useState(false);
 
   const makeRequest = () => {

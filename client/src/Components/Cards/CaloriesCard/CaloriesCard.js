@@ -30,11 +30,22 @@ export default function CaloriesCard({labelArray, dataArray}) {
       },
     ],
   };
+
+  console.log("data", dataArray)
   return (
     <>
       <div className={`card card_big`}>
-        <span className="total-calories-span">TOTAL CALORIES OF THE DAY</span>
-        <DoughnutChart chartData={data} />
+        {dataArray.length < 1 ? (
+          <div className="instructions-container">
+            <span className="instruction-span">ADD SOME FOOD IN THE INPUT</span>
+            <span className="example-span">Example: <br/>120g cooked chicken, 150g cooked rice</span>
+          </div>
+        ) : (
+          <>
+            <span className="total-calories-span">TOTAL CALORIES OF THE DAY</span>
+            <DoughnutChart chartData={data} />
+          </>
+        )}
       </div>
     </>
   );
