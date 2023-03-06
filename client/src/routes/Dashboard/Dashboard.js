@@ -25,7 +25,6 @@ export default function Dashboard() {
         console.log("DATA REQUEST OK | RESPONSE:", response.data);
         const newData = [...data, ...response.data]; // Merge the new data with the existing data
         setData(newData);
-        localStorage.setItem("data", JSON.stringify(newData)); // Persist the updated data
       })
       .catch((err) => {
         console.log("DATA REQUEST ERROR | ERROR:", err);
@@ -37,7 +36,15 @@ export default function Dashboard() {
       });
   };
   
-  
+  const removeObj = (index) => {
+    data.splice(index, 1);
+    const newData = [...data]
+    setData(newData)
+  }
+
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(data)); // Persist the updated data
+  }, [data])
 
   const handleChange = (event) => {
     setInput(event.target.value);
@@ -53,8 +60,13 @@ export default function Dashboard() {
     }
   }
 
+  // add a index for each object so we can remove using a button
+  data.forEach((obj, ind) => {
+    obj.id = ind;
+  })
+
   // memoize the data prop to prevent re-renders when it hasn't changed
   const memoizedData = useMemo(() => data, [data]);
 
-  return <DashboardUI foodNutritionalData={memoizedData} isFetching={isFetching} logout={logout} error={error} handleSubmit={handleSubmit} handleChange={handleChange} />;
+  return <DashboardUI foodNutritionalData={memoizedData} isFetching={isFetching} logout={logout} error={error} handleSubmit={handleSubmit} handleChange={handleChange} removeObj={removeObj} />;
 }

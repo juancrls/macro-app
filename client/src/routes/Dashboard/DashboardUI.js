@@ -14,12 +14,9 @@ export default function DashboardUI({
   logout,
   handleSubmit,
   handleChange,
+  removeObj,
 }) {
-  console.log("food nutr", foodNutritionalData);
-
   const [labelArray, dataArray] = processNutritionData(foodNutritionalData);
-  // const labelArray = processNutritionData(foodNutritionalData)[0]
-  // const dataArray = processNutritionData(foodNutritionalData)[1]
 
   return (
     <>
@@ -32,7 +29,7 @@ export default function DashboardUI({
 
             {Object.values(foodNutritionalData).map((food) => {
               return (
-                <NutritionalFactsCard {...food} data={foodNutritionalData} />
+                <NutritionalFactsCard {...food} data={foodNutritionalData} removeObj={removeObj} />
               );
             })}
           </section>

@@ -10,6 +10,12 @@ export default function NutritionalFacts(props) {
     setShowContent(!showContent);
   };
 
+  const removeObj = (ind) => {
+    props.removeObj(ind);
+    console.log("REMOVED ID", id)
+  }
+
+  
   const {
     name,
     calories,
@@ -19,7 +25,10 @@ export default function NutritionalFacts(props) {
     fiber_g,
     protein_g,
     sugar_g,
+    id
   } = props;
+
+  // console.log("DATA ON NUTRI", props.data)
 
   const options = {};
   const data = {
@@ -85,7 +94,7 @@ export default function NutritionalFacts(props) {
             />
             
           <Button
-            onClick={toggleContent}
+            onClick={removeObj}
             content={"REMOVE"}
             theme="remove-button"
           />
