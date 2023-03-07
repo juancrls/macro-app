@@ -1,5 +1,4 @@
 import React from "react";
-import Card from "../Cards/NutritionalFactsCard/NutritionalFactsCard";
 import IconLoader from "../Elements/IconLoader/IconLoader";
 import "./Form.scss"
 
