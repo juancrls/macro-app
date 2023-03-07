@@ -24,7 +24,7 @@ export default function Dashboard() {
         // headers: { "X-Api-Key": process.env.REACT_APP_NUTRITION_API_KEY },
       })
       .then((response) => {
-        console.log("DATA REQUEST OK | RESPONSE:", response.data);
+        // console.log("DATA REQUEST OK | RESPONSE:", response.data);
         const newData = [...data, ...response.data]; // Merge the new data with the existing data
         
         if(newData.length > 10) { // Limit the array to have only 10 foods
