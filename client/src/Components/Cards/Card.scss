@@ -73,7 +73,7 @@
   align-items: center;
 }
 
-.days-section-span {
+.days-section-span-container {
   width: 100%;
   height: 100%;
 
@@ -82,4 +82,8 @@
   justify-content: center;
   color: #89826a;
   font-size: 2rem;
+}
+
+.days-section-span {
+  text-align: center;
 }

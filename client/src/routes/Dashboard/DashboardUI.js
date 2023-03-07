@@ -24,9 +24,8 @@ export default function DashboardUI({
     <>
       <div className="dashboard">
         <div className="days">
-          <Header />
+          <Header logout={logout}/>
           <section className="card-container">
-            {/* <Button content="Logout" onClick={logout} /> */}
             {/* {isFetching && <p>Carregando...</p>} */}
 
             {isFetching ? (
@@ -39,8 +38,8 @@ export default function DashboardUI({
                   );
                 })
               ) : (
-                <div className="days-section-span">
-                  <span>
+                <div className="days-section-span-container">
+                  <span className="days-section-span">
                     Your food information will appear right here
                   </span>
                 </div>
