@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "macro-app-dev",
     "public": "client/build",
     "ignore": [
       "firebase.json",

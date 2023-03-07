@@ -9,6 +9,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    env:
+      FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+      FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -25,7 +29,7 @@ jobs:
         run: cd client && npm ci && npm run build
 
       - name: Deploy to Firebase Hosting
-        run: firebase deploy --only hosting --token $FIREBASE_TOKEN
+        run: firebase deploy --only hosting --token $FIREBASE_TOKEN --project macro-app-dev --apiKey $FIREBASE_API_KEY
 
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
