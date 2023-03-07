@@ -10,7 +10,6 @@ The current version of the app includes the following features:
 - Search for foods with the Nutrition API
 - Add food quantity in grams to calculate macros
 - Display the total amount of protein, carbohydrates, and fats consumed for the day
-- Display a pie chart with the macro ratio for the day
 
 Future releases of the app will include:
 
@@ -35,4 +34,5 @@ To run the project locally, follow these steps:
 
 ## Credits
 
-The Nutrition API used in this project is provided by [API Ninjas](https://api-ninjas.com/). ChartJS is a JavaScript library used to generate the pie chart.
+The Nutrition API used in this project is provided by [API Ninjas](https://api-ninjas.com/). 
+[ChartJS](https://www.chartjs.org) is a JavaScript library used to generate charts.
