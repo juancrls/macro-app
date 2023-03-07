@@ -30,7 +30,8 @@ jobs:
 
       - name: Deploy to Firebase Hosting
         run: |
-          firebase deploy --only hosting --token ${{ secrets.FIREBASE_TOKEN }} --set-env-vars REACT_APP_FIREBASE_API_KEY=${{ secrets.API_KEY }}
+          firebase use --add macro-app-development
+          firebase deploy --only hosting --project macro-app-development --token ${{ secrets.FIREBASE_TOKEN }} --set-env-vars REACT_APP_FIREBASE_API_KEY=${{ secrets.FIREBASE_API_KEY }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
