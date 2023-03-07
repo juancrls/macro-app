@@ -20,7 +20,7 @@ export default function Dashboard() {
 
     axios
       .get("https://api.api-ninjas.com/v1/nutrition?query=" + input, {
-        headers: { "X-Api-Key": "wytvQ2l//Mgm+lSkaJQfuQ==epvMuuw8U9sTJPn2" },
+        headers: { "X-Api-Key": "Xxv2omB45tpeYPB9MrRG6l0h6viEWVVLspGGP3eT" },
         // headers: { "X-Api-Key": process.env.REACT_APP_NUTRITION_API_KEY },
       })
       .then((response) => {
