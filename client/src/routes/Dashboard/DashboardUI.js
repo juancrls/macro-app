@@ -18,7 +18,7 @@ export default function DashboardUI({
   handleChange,
   removeObj,
 }) {
-  const [labelArray, dataArray, totalCalories] = processNutritionData(foodNutritionalData);
+  const [labelArray, totalDataArray, totalCalories] = processNutritionData(foodNutritionalData);
 
   return (
     <>
@@ -34,7 +34,7 @@ export default function DashboardUI({
               foodNutritionalData.length > 0 ? (
                 Object.values(foodNutritionalData).map((food, index) => {
                   return (
-                    <NutritionalFactsCard {...food} data={foodNutritionalData} removeObj={removeObj} key={index}/>
+                    <NutritionalFactsCard {...food} labelArray={labelArray} data={foodNutritionalData} removeObj={removeObj} key={index}/>
                   );
                 })
               ) : (
@@ -69,7 +69,7 @@ export default function DashboardUI({
               theme="query-button"
             />
           </Form>
-          <CaloriesCard labelArray={labelArray} dataArray={dataArray} totalCalories={totalCalories}/>
+          <CaloriesCard labelArray={labelArray} totalDataArray={totalDataArray} totalCalories={totalCalories}/>
         </section>
       </div>
     </>

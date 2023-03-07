@@ -2,30 +2,30 @@ export function processNutritionData(objectsArray) {
   // Create an array of labels by getting the keys of the first object and removing the 'name' property
   const requiredData = [
     "carbohydrates_total_g",
-    "sugar_g",
+    "fat_saturated_g",
+    "fat_total_g",
     "fiber_g",
     "protein_g",
-    "fat_satured_g",
-    "fat_total_g",
+    "sugar_g",
   ];
 
   let labelArray = [
     "Carbohydrates",
-    "Fiber",
-    "Sugar",
-    "Protein",
     "Saturated Fat",
     "Total Fat",
+    "Fiber",
+    "Protein",
+    "Sugar",
   ];
 
   // Create an object to store the sums of each property
   let sums = {
     "carbohydrates_total_g": 0,
-    "sugar_g": 0,
+    "fat_saturated_g": 0,
+    "fat_total_g": 0,
     "fiber_g": 0,
     "protein_g": 0,
-    "fat_satured_g": 0,
-    "fat_total_g": 0
+    "sugar_g": 0,
   };
 
   let totalCalories = 0;

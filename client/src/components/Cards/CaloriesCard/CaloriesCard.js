@@ -1,13 +1,14 @@
 import React from "react";
 import DoughnutChart from "../../Charts/DoughnutChart/DoughnutChart";
 
-export default function CaloriesCard({labelArray, dataArray, totalCalories}) {
+export default function CaloriesCard({labelArray, totalDataArray, totalCalories}) {
+
   const data = {
     labels: labelArray,
     datasets: [
       {
         label: "Quantity in grams (g)",
-        data: dataArray,
+        data: totalDataArray,
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
@@ -33,7 +34,7 @@ export default function CaloriesCard({labelArray, dataArray, totalCalories}) {
   return (
     <>
       <div className={`card card_big`}>
-        {dataArray.length < 1 ? (
+        {totalDataArray.length < 1 ? (
           <div className="instructions-container">
             <span className="instruction-span">ADD SOME FOOD IN THE INPUT</span>
             <span className="example-span">Example: <br/>120g cooked chicken, 150g cooked rice</span>

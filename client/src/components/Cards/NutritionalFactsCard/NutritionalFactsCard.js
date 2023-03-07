@@ -14,7 +14,6 @@ export default function NutritionalFacts(props) {
     props.removeObj(ind);
   }
 
-  
   const {
     name,
     calories,
@@ -24,51 +23,50 @@ export default function NutritionalFacts(props) {
     fiber_g,
     protein_g,
     sugar_g,
+    labelArray
   } = props;
-
-  // console.log("DATA ON NUTRI", props.data)
 
   const options = {};
   const data = {
     labels: [`${name} | ${calories} calories`],
     datasets: [
       {
-        label: "Carbohydrates",
+        label: labelArray[0],
         data: [carbohydrates_total_g],
         backgroundColor: "rgba(255, 99, 132, 0.2)",
         borderColor: "rgba(255, 99, 132, 1)",
         borderWidth: 1,
       },
       {
-        label: "Saturated Fat",
+        label: labelArray[1],
         data: [fat_saturated_g],
         backgroundColor: "rgba(54, 162, 235, 0.2)",
         borderColor: "rgba(54, 162, 235, 1)",
         borderWidth: 1,
       },
       {
-        label: "Total Fat",
+        label: labelArray[2],
         data: [fat_total_g],
         backgroundColor: "rgba(255, 206, 86, 0.2)",
         borderColor: "rgba(255, 206, 86, 1)",
         borderWidth: 1,
       },
       {
-        label: "Fiber",
+        label: labelArray[3],
         data: [fiber_g],
         backgroundColor: "rgba(75, 192, 192, 0.2)",
         borderColor: "rgba(75, 192, 192, 1)",
         borderWidth: 1,
       },
       {
-        label: "Protein",
+        label: labelArray[4],
         data: [protein_g],
         backgroundColor: "rgba(153, 102, 255, 0.2)",
         borderColor: "rgba(153, 102, 255, 1)",
         borderWidth: 1,
       },
       {
-        label: "Sugar",
+        label: labelArray[5],
         data: [sugar_g],
         backgroundColor: "rgba(255, 159, 64, 0.2)",
         borderColor: "rgba(255, 159, 64, 1)",
