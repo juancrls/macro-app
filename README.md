@@ -17,6 +17,7 @@ Future releases of the app will include:
 - Save common meals
 - Organize and save the data for each day of the year
 - Calculate the user's recommended macros
+- Mobile version
 
 ## Usage
 
