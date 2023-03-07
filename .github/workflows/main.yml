@@ -23,13 +23,15 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2
         with:
-          node-version: '14.x'
+          node-version: "14.x"
 
       - name: Install Dependencies and Build
         run: cd client && npm ci && npm run build
 
       - name: Deploy to Firebase Hosting
-        run: firebase deploy --only hosting --token $FIREBASE_TOKEN --project macro-app-dev --apiKey $FIREBASE_API_KEY
-
+        run: |
+          firebase use --add macro-app-dev
+          firebase deploy --only hosting --project macro-app-dev --token ${{ secrets.FIREBASE_TOKEN }} --set-env-vars REACT_APP_FIREBASE_API_KEY=${{ secrets.API_KEY }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          API_KEY: ${{ secrets.FIREBASE_API_KEY }}
