@@ -25,5 +25,5 @@ jobs:
         run: cd client && npm ci && npm run build
 
       - name: Deploy to Firebase Hosting
-        run: firebase projects:list && firebase deploy --only hosting --project macro-app-dev
+        run: firebase deploy
           
