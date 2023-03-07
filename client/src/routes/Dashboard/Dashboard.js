@@ -16,10 +16,12 @@ export default function Dashboard() {
 
   const makeRequest = () => {
     setIsFetching(true);
-  
+    // console.log("DATA REQUEST INPUT:", input);
+
     axios
       .get("https://api.api-ninjas.com/v1/nutrition?query=" + input, {
-        headers: { "X-Api-Key": process.env.REACT_APP_NUTRITION_API_KEY },
+        headers: { "X-Api-Key": "wytvQ2l//Mgm+lSkaJQfuQ==epvMuuw8U9sTJPn2" },
+        // headers: { "X-Api-Key": process.env.REACT_APP_NUTRITION_API_KEY },
       })
       .then((response) => {
         console.log("DATA REQUEST OK | RESPONSE:", response.data);
@@ -32,11 +34,11 @@ export default function Dashboard() {
         setData(newData);
       })
       .catch((err) => {
-        console.log("DATA REQUEST ERROR | ERROR:", err);
+        // console.log("DATA REQUEST ERROR | ERROR:", err);
         setError(err);
       })
       .finally(() => {
-        console.log("DATA REQUEST DONE");
+        // console.log("DATA REQUEST DONE");
         setIsFetching(false);
       });
   };
@@ -59,7 +61,6 @@ export default function Dashboard() {
     event.preventDefault();
     if(input.trim().length < 1) {
       setError("Insert a valid input!")
-      console.log("ERROR - NO INPUT")
     } else {
       makeRequest();
     }
