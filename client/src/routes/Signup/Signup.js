@@ -3,7 +3,7 @@ import SignupData from './SignupData';
 import SignupUI from './SignupUI';
 import { useNavigate } from 'react-router-dom';
 import { hasError } from '../../utils/hasError';
-import InputValidation from '../../components/TextArea/InputValidation';
+import InputValidation from '../../components/TextArea/InputValidation.js';
 import { getErrorMessage } from '../../utils/firebaseErrorHandlers';
 
 export default function Signup() {

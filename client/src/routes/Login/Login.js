@@ -3,7 +3,7 @@ import LoginData from './LoginData';
 import LoginUI from './LoginUI';
 import { useNavigate } from 'react-router-dom';
 import { hasError } from '../../utils/hasError';
-import InputValidation from '../../components/TextArea/InputValidation';
+import InputValidation from '../../components/TextArea/InputValidation.js';
 import { getErrorMessage } from '../../utils/firebaseErrorHandlers';
 
 export default function Login() {
