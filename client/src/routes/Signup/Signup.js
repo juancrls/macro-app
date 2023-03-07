@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SignupData from './SignupData';
 import SignupUI from './SignupUI';
 import { useNavigate } from 'react-router-dom';
-import { sleep } from '../../utils/sleep';
 import { hasError } from '../../utils/hasError';
 import InputValidation from '../../components/TextArea/InputValidation';
 import { getErrorMessage } from '../../utils/firebaseErrorHandlers';

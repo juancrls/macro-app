@@ -4,7 +4,6 @@ import TextArea from "../../components/TextArea/TextArea.js";
 import Button from "../../components/Button/Button";
 import Spinner from "../../components/LoadingIndicators/Spinner/Spinner.js";
 import "./Signup.scss";
-import { Link } from "react-router-dom";
 
 export default function signupUI({
   handleSubmit,

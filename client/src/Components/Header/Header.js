@@ -5,10 +5,10 @@ import Button from "../Button/Button";
 import "./Header.scss";
 
 export default function Header({logout}) {
-  const links = [
-    { url: "/about", label: "ABOUT" },
-    { url: "/contact", label: "CONTACT" },
-  ];
+  // const links = [
+  //   { url: "/about", label: "ABOUT" },
+  //   { url: "/contact", label: "CONTACT" },
+  // ];
 
   return (
     <header className="header">
