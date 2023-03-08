@@ -1,6 +1,6 @@
 # Macro app
 
-This is a web application built using Firebase Auth, Nutrition API, ChartJS, and React. The objective of this project is to enable users to calculate their daily macros by searching for foods and adding the quantity in grams. The app then calculates how much protein, carbohydrates, etc. the user has consumed in the day.
+This is a web application built using Firebase Auth, Nutrition API, ChartJS and React. The objective of this project is to enable users to calculate their daily macros by searching for foods and adding the quantity in grams. The app then calculates how much protein, carbohydrates, etc. the user has consumed in the day.
 
 ## Features
 
